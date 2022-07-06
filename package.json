@@ -1,0 +1,19 @@
+{
+  "name": "phonetify-medina",
+  "version": "1.0.0",
+  "description": "ecommerce",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/main.scss ./css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carlosmedina06/Phonetify-Medina.git"
+  },
+  "author": "carlosmedina06",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carlosmedina06/Phonetify-Medina/issues"
+  },
+  "homepage": "https://github.com/Carlosmedina06/Phonetify-Medina#readme"
+}
