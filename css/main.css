@@ -253,6 +253,7 @@ footer img {
 .cartaContenedora .cartaImg {
   object-fit: cover;
   object-position: center;
+  padding: 1rem;
 }
 .cartaContenedora .cartaTitulo {
   color: #1d1d1f;
