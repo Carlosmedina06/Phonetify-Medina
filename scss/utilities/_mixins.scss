@@ -144,6 +144,10 @@
     box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
     min-width: 250px;
     min-height: 364px;
+    .cartaImg{
+        object-fit: cover;
+        object-position: center;
+    }
     .cartaTitulo {
         color: #1d1d1f;
         padding: 10px 15px 0px 14px;

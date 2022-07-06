@@ -250,6 +250,10 @@ footer img {
   min-width: 250px;
   min-height: 364px;
 }
+.cartaContenedora .cartaImg {
+  object-fit: cover;
+  object-position: center;
+}
 .cartaContenedora .cartaTitulo {
   color: #1d1d1f;
   padding: 10px 15px 0px 14px;
