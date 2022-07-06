@@ -47,7 +47,7 @@ carritoList.addEventListener('click', e => {
 //capturar datos
 const fetchData = async() => {
     try {
-        const respuesta = await fetch('../api.json', { mode: 'no-cors'})
+        const respuesta = await fetch('../api.json')
         const data = await respuesta.json()
         agregarCards(data)
     } catch (error) {
@@ -73,6 +73,7 @@ const agregarCards = data => {
 const agregarAlCarrito = e => {
     if(e.target.classList.contains('cartaBtn')){
         setCarrito(e.target.parentElement.parentElement)
+        agregarToast()
     }
     e.stopPropagation()
 }
@@ -107,6 +108,7 @@ const pintarCarrito = () =>{
         carritoCard.querySelector('.carritoCantidad').textContent = producto.cantidad
         const clone = carritoCard.cloneNode(true)
         fragment.appendChild(clone)
+
     })
     carritoList.appendChild(fragment)
     localStorage.setItem('carrito', JSON.stringify(carrito))
@@ -133,7 +135,38 @@ const btnEliminar = e => {
         }
         pintarCarrito()
         pintarTotal()
+        eliminarToast()
     }
 }
 
+const agregarToast = () =>{
+    Toastify({
+        text: "Se agrego un nuevo producto al carrito",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "bottom",
+        position: "left",
+        stopOnFocus: true,
+        style: {
+            background: "#fff",
+            color: "#000"
+        },
+    }).showToast()
+}
 
+const eliminarToast = () =>{
+    Toastify({
+        text: "Se elimino un producto del carrito",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "bottom",
+        position: "left",
+        stopOnFocus: true,
+        style: {
+            background: "#f70202",
+            color: "#FFF"
+        },
+    }).showToast()
+}
