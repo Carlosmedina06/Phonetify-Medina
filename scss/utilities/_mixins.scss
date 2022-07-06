@@ -145,9 +145,10 @@
     min-width: 250px;
     min-height: 364px;
     .cartaImg{
+        width: 100%;
         object-fit: cover;
         object-position: center;
-        padding: 3rem;
+        padding: 1rem;
     }
     .cartaTitulo {
         color: #1d1d1f;
