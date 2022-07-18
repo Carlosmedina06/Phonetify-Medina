@@ -108,11 +108,11 @@ const pintarCarrito = () =>{
         carritoCard.querySelector('.carritoCantidad').textContent = producto.cantidad
         const clone = carritoCard.cloneNode(true)
         fragment.appendChild(clone)
-
     })
     carritoList.appendChild(fragment)
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
+
 //Total del cantidades y precios
 const pintarTotal = () =>{
 const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
@@ -122,6 +122,14 @@ templateCarritoTotal.querySelector('.tPrecio2').textContent = nPrecio
 const clone = templateCarritoTotal.cloneNode(true)
 fragment.appendChild(clone)
 carritoList.appendChild(fragment)
+//Vaciar Carrito
+const btnVaciarCarrito = document.querySelector('.btnCarritoBorrar')
+btnVaciarCarrito.addEventListener('click' , () => {
+    carrito = {}
+    pintarCarrito()
+    pintarTotal()
+    eliminarTodo()
+})
 }
 //Borrar Productos
 const btnEliminar = e => {
@@ -133,12 +141,9 @@ const btnEliminar = e => {
         } else {
             carrito[e.target.dataset.id] = {...producto}
         }
-        pintarCarrito()
-        pintarTotal()
-        eliminarToast()
     }
 }
-
+//Alerts
 const agregarToast = () =>{
     Toastify({
         text: "Se agrego un nuevo producto al carrito",
@@ -154,10 +159,24 @@ const agregarToast = () =>{
         },
     }).showToast()
 }
-
 const eliminarToast = () =>{
     Toastify({
         text: "Se elimino un producto del carrito",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "bottom",
+        position: "left",
+        stopOnFocus: true,
+        style: {
+            background: "#f70202",
+            color: "#FFF"
+        },
+    }).showToast()
+}
+const eliminarTodo = () =>{
+    Toastify({
+        text: "Eliminaste todos los productos del carrito",
         duration: 3000,
         newWindow: true,
         close: true,

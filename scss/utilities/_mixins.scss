@@ -108,7 +108,23 @@
         max-height: 40px;
         border: 1px solid color(bgBlack);
     }
-
+//btn Vaciar Carrito
+@mixin btnBorrar {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    padding: 8px 10px;
+    background-color: #fff;
+    color: #ff0000;
+    max-height: 40px;
+    border: 1px solid #ff0000;
+    &.btnBorrar:hover{
+        background-color: #ff0000;
+        color: #fff;
+        border: #ff0000;
+        transition: all 0.3s ease-in;
+    }
+}
 /////////////////////INPUTS
 //input Search
 @mixin inputSearch {
@@ -228,6 +244,3 @@
     font-weight: 300;
     line-height: 21px;
 }
-
-
-
