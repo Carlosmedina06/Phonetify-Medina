@@ -142,6 +142,9 @@ const btnEliminar = e => {
             carrito[e.target.dataset.id] = {...producto}
         }
     }
+    pintarCarrito()
+    pintarTotal()
+    eliminarToast()
 }
 //Alerts
 const agregarToast = () =>{
