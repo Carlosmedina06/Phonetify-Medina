@@ -112,7 +112,6 @@ const pintarCarrito = () =>{
     carritoList.appendChild(fragment)
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
-
 //Total del cantidades y precios
 const pintarTotal = () =>{
 const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
@@ -141,10 +140,10 @@ const btnEliminar = e => {
         } else {
             carrito[e.target.dataset.id] = {...producto}
         }
+        pintarCarrito()
+        pintarTotal()
+        eliminarToast()
     }
-    pintarCarrito()
-    pintarTotal()
-    eliminarToast()
 }
 //Alerts
 const agregarToast = () =>{
