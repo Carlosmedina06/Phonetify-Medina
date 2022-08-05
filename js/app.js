@@ -121,6 +121,14 @@ templateCarritoTotal.querySelector('.tPrecio2').textContent = nPrecio
 const clone = templateCarritoTotal.cloneNode(true)
 fragment.appendChild(clone)
 carritoList.appendChild(fragment)
+//Comprar
+const comprarButton = document.getElementById('btnComprar')
+comprarButton.addEventListener('click' , () =>{
+    carrito = {}
+    pintarCarrito()
+    pintarTotal()
+    alertComprar()
+})
 //Vaciar Carrito
 const btnVaciarCarrito = document.querySelector('.btnCarritoBorrar')
 btnVaciarCarrito.addEventListener('click' , () => {
@@ -145,6 +153,7 @@ const btnEliminar = e => {
         eliminarToast()
     }
 }
+
 //Alerts
 const agregarToast = () =>{
     Toastify({
@@ -190,4 +199,14 @@ const eliminarTodo = () =>{
             color: "#FFF"
         },
     }).showToast()
+}
+
+const alertComprar = () => {
+    Swal.fire({
+        title: 'Compra realizada con exito.',
+        text: 'Gracias por preferirnos ✌🏻',
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '#313132',
+    })
 }

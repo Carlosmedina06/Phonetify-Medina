@@ -12,8 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <!--bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <!--Toastify JS-->
+    <!--Toastify JS-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!--Sweetalert 2-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--css-->
     <link rel="stylesheet" href="./css/main.css">
     <title>Phonetify | Apple Premium Reseller</title>
@@ -150,7 +152,7 @@
     <template class="totalComprar" id="totalComprar">
         <p class="my-3">Productos: <span class="tProductos">1</span></p>
         <p class="tPrecio">Total: $ <span class="tPrecio2"></span></p>
-        <button class="btnCarritoList">Comprar</button>
+        <button id="btnComprar" class="btnCarritoList">Comprar</button>
         <button class="btnCarritoBorrar btnBorrar">Vaciar Carrito</button>
     </template>
 </div>
